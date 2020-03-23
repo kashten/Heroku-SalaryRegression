@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API (Bayesianalytics) </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+  <h4> (Enter Numeric Values Only)</h4>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" /> 
+      <input type="text" name="Attrition" placeholder="Attrition" required="required" />
+      <input type="text" name="DistanceFromHome" placeholder="DistanceFromHome" required="required" />
+      <input type="text" name="Education" placeholder="Education" required="required" />
+      <input type="text" name="JobLevel" placeholder="JobLevel" required="required" />
+      <input type="text" name="NumCompaniesWorked" placeholder="NumCompaniesWorked" required="required" />
+      <input type="text" name="PercentSalaryHike" placeholder="PercentSalaryHike" required="required" />
+      <input type="text" name="StockOptionLevel" placeholder="StockOptionLevel" required="required" />
+      <input type="text" name="TrainingTimesLastYear" placeholder="TrainingTimesLastYear" required="required" />
+      <input type="text" name="YearsSinceLastPromotion" placeholder="YearsSinceLastPromotion" required="required" />
+      <input type="text" name="YearsWithCurrManager" placeholder="YearsWithCurrManager" required="required" />
+      <input type="text" name="EnvironmentSatisfaction" placeholder="EnvironmentSatisfaction" required="required" />
+      <input type="text" name="JobSatisfaction" placeholder="JobSatisfaction" required="required" />
+      <input type="text" name="WorkLifeBalance" placeholder="WorkLifeBalance" required="required" />
+      <input type="text" name="JobInvolvement" placeholder="JobInvolvement" required="required" />
+      <input type="text" name="PerformanceRating" placeholder="PerformanceRating" required="required" />
+      <input type="text" name="BusinessTravel_Non-Travel" placeholder="BusinessTravel_Non-Travel" required="required" />
+      <input type="text" name="BusinessTravel_Travel_Frequently" placeholder="BusinessTravel_Travel_Frequently" required="required" />
+      <input type="text" name="BusinessTravel_Travel_Rarely" placeholder="BusinessTravel_Travel_Rarely" required="required" />
+      <input type="text" name="Department_Human Resources" placeholder="Department_Human Resources" required="required" />
+      <input type="text" name="Department_Research & Development" placeholder="Department_Research & Development" required="required" />
+      <input type="text" name="Department_Sales" placeholder="Department_Sales" required="required" />
+      <input type="text" name="EducationField_Human Resources" placeholder="EducationField_Human Resources" required="required" />
+      <input type="text" name="EducationField_Human Resources" placeholder="EducationField_Human Resources" required="required" />
+      <input type="text" name="EducationField_Life Sciences" placeholder="EducationField_Life Sciences" required="required" />
+      <input type="text" name="EducationField_Marketing" placeholder="EducationField_Marketing" required="required" />
+      <input type="text" name="EducationField_Medical" placeholder="EducationField_Medical" required="required" />
+      <input type="text" name="EducationField_Other" placeholder="EducationField_Other" required="required" />
+      <input type="text" name="EducationField_Technical Degree" placeholder="EducationField_Technical Degree" required="required" />
+      <input type="text" name="Gender_Female" placeholder="Gender_Female" required="required" />
+      <input type="text" name="Gender_Male" placeholder="Gender_Male" required="required" />
+      <input type="text" name="JobRole_Healthcare Representative" placeholder="JobRole_Healthcare Representative" required="required" />
+      <input type="text" name="JobRole_Human Resources" placeholder="JobRole_Human Resources" required="required" />
+      <input type="text" name="JobRole_Laboratory Technician" placeholder="JobRole_Laboratory Technician" required="required" />
+      <input type="text" name="JobRole_Manager" placeholder="JobRole_Manager" required="required" />
+      <input type="text" name="JobRole_Manufacturing Director" placeholder="JobRole_Manufacturing Director" required="required" />
+      <input type="text" name="JobRole_Research Director" placeholder="JobRole_Research Director" required="required" />
+      <input type="text" name="JobRole_Research Scientist" placeholder="JobRole_Research Scientist" required="required" />
+      <input type="text" name="JobRole_Sales Executive" placeholder="JobRole_Sales Executive" required="required" />
+      <input type="text" name="JobRole_Sales Representative" placeholder="JobRole_Sales Representative" required="required" />
+      <input type="text" name="MaritalStatus_Divorced" placeholder="MaritalStatus_Divorced" required="required" />
+      <input type="text" name="MaritalStatus_Married" placeholder="MaritalStatus_Married" required="required" />
+      <input type="text" name="MaritalStatus_Single" placeholder="MaritalStatus_Single" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+</body>
+</html>
